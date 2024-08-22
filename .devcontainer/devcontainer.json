@@ -1,0 +1,9 @@
+{
+  "name": "wishlist",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "web",
+  "workspaceFolder": "/var/www/html",
+  "forwardPorts": [
+    80
+  ]
+}

@@ -1,0 +1,13 @@
+name: devcontainer_wishlist
+services:
+  web:
+    container_name: wishlist
+    build:
+      context: .
+      dockerfile: dockerfile
+      target: dev
+    networks:
+      - local_bridge
+networks:
+  local_bridge:
+    external: true

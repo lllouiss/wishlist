@@ -1,0 +1,21 @@
+FROM php:8.3-apache as dev
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV APP_ENV=development
+
+ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+
+COPY ../. /var/www/html
+
+RUN chmod +x /usr/local/bin/install-php-extensions
+RUN apt update
+RUN apt -y install --no-install-recommends apt-utils zip unzip nano ncdu git vim gitg ssh 2>&1
+RUN install-php-extensions intl pdo_mysql opcache gd gettext json calendar curl apcu zip
+RUN echo "memory_limit = 512M" >> /usr/local/etc/php/php.ini
+RUN echo "max_execution_time = 600" >> /usr/local/etc/php/php.ini
+RUN a2enmod rewrite
+RUN apt autoremove -y
+RUN apt clean -y
+RUN rm -rf /var/lib/apt/lists/*
+
+ENV DEBIAN_FRONTEND=dialog
