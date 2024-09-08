@@ -1,0 +1,135 @@
+.wishlist{
+    background: white;
+    background-size: cover;
+    padding: 20px;
+    font-family: "Vollkorn", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.item{
+    color: #ffffff;
+    background: #d8d8d8;
+    border-radius: 3px;
+    margin-top: 24px;
+    padding: 12px;
+    position: relative;
+    display: flex;
+    height: 600px;
+    align-items: end;
+    transition-property: box-shadow, transform;
+    transition-duration: 350ms;
+    transition-timing-function: ease;
+}
+
+.item:hover {
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.44);
+    transform: translateY(-8px);
+}
+
+.item img{
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.item div div{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.item div{
+    width: 100%;
+}
+
+.item div div > *{
+    padding: 20px;
+}
+
+.item p{
+    margin: 0;
+    font-weight: 700;
+}
+
+.item a{
+    text-decoration: none;
+    color: #480ad1;
+    font-weight: 700;
+}
+
+.item h1{
+    font-weight: 900;
+    font-size: 100px;
+    width: 100%;
+    text-align: center;
+    @media screen and (max-width: 900px){
+        font-size: 70px;
+    }
+}
+
+.item h1:first-letter{
+    color: #480ad1;
+}
+
+.cssanimation, .cssanimation span {
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+}
+
+.cssanimation span {
+    display: inline-block
+}
+
+.leAboundTop span { animation-name: leAboundTop }
+@keyframes leAboundTop {
+    50% {
+        transform: translateY(-20px);
+        animation-timing-function: ease-in;
+    }
+}
+
+.form{
+    display: none;
+    background: #2b2f32;
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.visible{
+    display: grid;
+}
+
+.new i{
+    zoom: 15;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.new{
+    color: #ffffff;
+    background: #d8d8d8;
+    border-radius: 3px;
+    margin-top: 24px;
+    padding: 12px;
+    position: relative;
+    height: 600px;
+    align-items: end;
+    transition-property: box-shadow, transform;
+    transition-duration: 350ms;
+    transition-timing-function: ease;
+}
+
+.new:hover {
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.44);
+    transform: translateY(-8px);
+}
